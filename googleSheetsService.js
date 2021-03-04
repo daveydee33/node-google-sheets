@@ -19,7 +19,7 @@ async function getSpreadSheet({ spreadsheetId, auth }) {
   return res;
 }
 
-async function getSpreadSheetValue({ spreadsheetId, auth, sheetName }) {
+async function getSpreadSheetValues({ spreadsheetId, auth, sheetName }) {
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId,
     auth,
@@ -31,5 +31,5 @@ async function getSpreadSheetValue({ spreadsheetId, auth, sheetName }) {
 module.exports = {
   getAuthToken,
   getSpreadSheet,
-  getSpreadSheetValue,
+  getSpreadSheetValues,
 };

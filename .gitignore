@@ -1,4 +1,7 @@
+# Add the filename to the google credentials json.
 google_service_account_credentials.json
-.env
-.vscode
+
 node_modules
+.env
+tmp
+.vscode
