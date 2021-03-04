@@ -1,3 +1,4 @@
 google_service_account_credentials.json
 .env
 .vscode
+node_modules
