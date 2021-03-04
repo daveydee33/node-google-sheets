@@ -15,3 +15,6 @@ cp .env.example .env
 ## References
 
 - Google APIs: NPM `googleapis`
+- Google Developers Console: https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?supportedpurview=project
+- https://hackernoon.com/how-to-use-google-sheets-api-with-nodejs-cz3v316f
+- https://developers.google.com/sheets/api/reference/rest#rest-resource:-v4.spreadsheets.values
