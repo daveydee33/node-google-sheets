@@ -2,6 +2,7 @@ const {
   getAuthToken,
   getSpreadSheet,
   getSpreadSheetValues,
+  appendSpreadSheetValues,
 } = require("./googleSheetsService.js");
 
 const spreadsheetId = process.argv[2];
@@ -40,9 +41,27 @@ async function testGetSpreadSheetValues() {
   }
 }
 
+async function testAppendSpreadSheetValues() {
+  try {
+    const auth = await getAuthToken();
+    const response = await appendSpreadSheetValues({
+      spreadsheetId,
+      sheetName,
+      auth,
+      values: [
+        ["A", "B", "C"],
+        ["D", "E", "F"],
+      ],
+    });
+  } catch (error) {
+    console.log(error.message, error.stack);
+  }
+}
+
 function main() {
   testGetSpreadSheet();
   testGetSpreadSheetValues();
+  // testAppendSpreadSheetValues(); // This will actually add test values to the sheet
 }
 
 main();

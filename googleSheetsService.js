@@ -28,8 +28,28 @@ async function getSpreadSheetValues({ spreadsheetId, auth, sheetName }) {
   return res;
 }
 
+async function appendSpreadSheetValues({
+  spreadsheetId,
+  auth,
+  sheetName,
+  values,
+}) {
+  const res = await sheets.spreadsheets.values.append({
+    spreadsheetId,
+    auth,
+    range: sheetName,
+    resource: {
+      values: values,
+    },
+    valueInputOption: "USER_ENTERED", // USER_ENTERED or RAW
+    // insertDataOption: "INSERT_ROWS" or "OVERWRITE"
+  });
+  return res;
+}
+
 module.exports = {
   getAuthToken,
   getSpreadSheet,
   getSpreadSheetValues,
+  appendSpreadSheetValues,
 };
